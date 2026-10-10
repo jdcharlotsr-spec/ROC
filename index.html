@@ -174,6 +174,35 @@ button,input{font:inherit}
 .social{display:flex;gap:11px;margin-top:13px}
 .social span{width:29px;height:29px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.73rem;font-weight:900}
 
+/* giving */
+.give-section{background:#fffaf3;padding:8px 0 58px}
+.give-panel{
+  position:relative;overflow:hidden;border-radius:18px;padding:38px;
+  background:linear-gradient(135deg,#173f35 0%,#1e5744 100%);color:#fff;
+  box-shadow:var(--shadow)
+}
+.give-panel::after{
+  content:"";position:absolute;right:-90px;top:-120px;width:330px;height:330px;border-radius:50%;
+  border:1px solid rgba(213,167,53,.2);box-shadow:0 0 0 42px rgba(213,167,53,.04),0 0 0 84px rgba(213,167,53,.025)
+}
+.give-heading{position:relative;z-index:2;max-width:760px;margin-bottom:25px}
+.give-heading .eyebrow{color:#efc75c}
+.give-heading h2{font-family:Georgia,serif;font-size:clamp(2rem,3vw,2.7rem);line-height:1.05;margin:4px 0 9px;color:#fff}
+.give-heading p{margin:0;color:rgba(255,255,255,.82);font-size:.96rem}
+.giving-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.giving-card{display:flex;flex-direction:column;min-width:0;padding:21px;border-radius:13px;background:#fffaf3;color:var(--green);border:1px solid rgba(213,167,53,.32)}
+.giving-card-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.giving-logo{width:48px;height:48px;flex:0 0 48px;display:block;position:relative;overflow:hidden;border-radius:11px;background:#fff;box-shadow:0 5px 10px rgba(18,49,40,.15)}
+.giving-logo img{position:absolute;width:131px;height:auto;max-width:none;display:block}
+.giving-logo-zelle img{left:-12px;top:-11px}
+.giving-logo-cash img{left:-70px;top:-11px}
+.giving-logo-paypal img{left:-70px;top:-67px}
+.giving-card h3{font-family:Georgia,serif;font-size:1.35rem;margin:0;color:var(--green)}
+.giving-card small{display:block;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
+.giving-value{font-size:1.08rem;font-weight:900;overflow-wrap:anywhere;margin:0 0 17px;color:var(--ink)}
+.giving-card .btn{margin-top:auto;width:100%;padding:11px 13px;border-radius:8px;font-size:.82rem}
+.give-note{position:relative;z-index:2;margin:17px 0 0;color:rgba(255,255,255,.72);font-size:.76rem}
+
 /* footer */
 footer{background:#102f27;color:#dfe7e2;padding:35px 0}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:25px}
@@ -212,6 +241,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
  .mission-grid{grid-template-columns:1fr}
  .card-img{height:155px;flex-basis:155px}
  .bottom-wrap{padding-top:0}
+ .giving-grid{grid-template-columns:1fr}
  .impact{grid-template-columns:1fr 1fr}
  .impact-title{grid-column:1/-1;margin-bottom:18px}
  .metric{border-left:0;border-top:1px solid rgba(255,255,255,.25);padding:18px 10px}
@@ -228,6 +258,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
  .signup .mailicon{display:none}
  .signup-form{flex-direction:column;gap:8px}
  .signup-form input,.signup-form button{border-radius:8px;padding:12px}
+ .give-panel{padding:28px 20px}
  .foot{flex-direction:column;align-items:flex-start}
  .footlinks{flex-wrap:wrap}
 }
@@ -408,14 +439,48 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
   </div>
 </section>
 
-<section id="give" style="background:#fffaf3;padding:8px 0 58px">
-  <div class="container" style="background:var(--beige);border:1px solid var(--line);border-radius:16px;padding:31px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
-    <div>
-      <div class="eyebrow">Support ROC International</div>
-      <h2 class="serif" style="font-size:2rem;margin:2px 0 5px">Help turn compassion into action.</h2>
-      <p style="margin:0;color:var(--muted)">Give toward local outreach, Jamaica, Kenya, a mission traveler, or the area of greatest need.</p>
+<section class="give-section" id="give">
+  <div class="container">
+    <div class="give-panel">
+      <div class="give-heading">
+        <div class="eyebrow">Ways to Donate</div>
+        <h2>Support Rooted On Christ International</h2>
+        <p>Your generosity helps ROC serve communities through outreach, missions, clean water, medical support, and the Gospel.</p>
+      </div>
+      <div class="giving-grid">
+        <article class="giving-card">
+          <div class="giving-card-top">
+            <span class="giving-logo giving-logo-zelle" role="img" aria-label="Zelle logo">
+              <img src="assets/giving-method-logos.png" alt="" aria-hidden="true">
+            </span>
+            <div><small>Give With</small><h3>Zelle</h3></div>
+          </div>
+          <p class="giving-value">313-486-0366</p>
+          <button class="btn btn-green" type="button" onclick="copyGiveValue(this,'313-486-0366')">Copy Zelle Number</button>
+        </article>
+        <article class="giving-card">
+          <div class="giving-card-top">
+            <span class="giving-logo giving-logo-cash" role="img" aria-label="Cash App logo">
+              <img src="assets/giving-method-logos.png" alt="" aria-hidden="true">
+            </span>
+            <div><small>Give With</small><h3>Cash App</h3></div>
+          </div>
+          <p class="giving-value">$TheROCint</p>
+          <a class="btn btn-green" href="https://cash.app/$TheROCint" target="_blank" rel="noopener noreferrer">Open Cash App&nbsp; →</a>
+        </article>
+        <article class="giving-card">
+          <div class="giving-card-top">
+            <span class="giving-logo giving-logo-paypal" role="img" aria-label="PayPal logo">
+              <img src="assets/giving-method-logos.png" alt="" aria-hidden="true">
+            </span>
+            <div><small>Give With</small><h3>PayPal</h3></div>
+          </div>
+          <p class="giving-value">therocint@gmail.com</p>
+          <button class="btn btn-green" type="button" onclick="copyGiveValue(this,'therocint@gmail.com')">Copy PayPal Email</button>
+        </article>
+      </div>
+      <p class="give-note">Please include your name and giving designation in the payment note when applicable.</p>
     </div>
-    <a class="btn btn-gold" href="#">♡ &nbsp;Donate Now</a>
   </div>
 </section>
 </main>
@@ -428,6 +493,20 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
 </footer>
 
 <script>
+async function copyGiveValue(button,value){
+  const original=button.textContent;
+  try{
+    await navigator.clipboard.writeText(value);
+    button.textContent='Copied!';
+  }catch(error){
+    const helper=document.createElement('textarea');
+    helper.value=value;helper.setAttribute('readonly','');helper.style.position='fixed';helper.style.opacity='0';
+    document.body.appendChild(helper);helper.select();document.execCommand('copy');helper.remove();
+    button.textContent='Copied!';
+  }
+  setTimeout(()=>button.textContent=original,1800);
+}
+
 // Countdown: next trip, June 21, 2027 at 9:00 AM Central / Jamaica time (UTC-05:00)
 const target = new Date("2027-06-21T09:00:00-05:00");
 function renderCountdown(){
