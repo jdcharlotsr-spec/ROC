@@ -139,6 +139,13 @@ button,input{font:inherit}
 }
 .date-sm{font-size:.72rem;font-weight:750;margin:-1px 0 6px}
 
+/* about */
+.about-band{background:#fffaf3;padding:0 0 24px}
+.about-panel{border:1px solid rgba(213,167,53,.3);border-radius:15px;background:#f2eadc;padding:25px 30px;box-shadow:0 5px 15px rgba(41,57,49,.05)}
+.about-panel h2{font-family:Georgia,serif;font-size:1.75rem;line-height:1.12;margin:3px 0 8px;color:var(--green)}
+.about-panel p{max-width:1050px;margin:0;color:#30463f;font-size:.92rem}
+.about-panel p a{color:var(--green);font-weight:900;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+
 /* bottom */
 .bottom-wrap{display:grid;grid-template-columns:2fr 1fr;gap:18px;padding:0 0 25px;background:#fffaf3}
 .impact{
@@ -163,7 +170,7 @@ button,input{font:inherit}
   border-radius:15px;background:#f2eadc;padding:25px 30px;min-height:207px;position:relative
 }
 .signup h2{font-family:Georgia,serif;font-size:1.5rem;margin:2px 0 5px;color:var(--green)}
-.signup p{font-size:.73rem;color:var(--muted);max-width:280px}
+.signup p{font-size:.73rem;color:var(--muted);max-width:300px}
 .signup .mailicon{
   position:absolute;right:32px;top:30px;width:63px;height:63px;border:1px solid #d4aa45;border-radius:50%;
   display:grid;place-items:center;color:#c69220;font-size:1.6rem
@@ -171,8 +178,15 @@ button,input{font:inherit}
 .signup-form{display:flex;margin-top:15px}
 .signup-form input{border:1px solid rgba(23,63,53,.14);padding:11px 13px;border-radius:8px 0 0 8px;background:#fff;min-width:0;flex:1}
 .signup-form button{border:0;background:var(--green);color:#fff;font-weight:800;padding:0 18px;border-radius:0 8px 8px 0}
-.social{display:flex;gap:11px;margin-top:13px}
-.social span{width:29px;height:29px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.73rem;font-weight:900}
+.contact-list{display:grid;gap:7px;margin:13px 0 0}
+.contact-item{display:grid;grid-template-columns:23px minmax(0,1fr);gap:7px;align-items:start;color:#31473f;font-size:.72rem}
+.contact-item .contact-icon{width:23px;height:23px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:.65rem;font-weight:900}
+.contact-item a{overflow-wrap:anywhere}
+.contact-item a:hover{text-decoration:underline}
+.social{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.social-chip{min-height:31px;border-radius:999px;background:var(--green);color:#fff;display:inline-flex;align-items:center;gap:7px;padding:0 11px;font-size:.69rem;font-weight:800}
+.social-chip b{font-size:.82rem}
+.social-chip.is-disabled{opacity:.56;cursor:default}
 
 /* giving */
 .give-section{background:#fffaf3;padding:8px 0 58px}
@@ -255,6 +269,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
  .impact-title{grid-column:auto}
  .metric{border-top:1px solid rgba(255,255,255,.25)}
  .section-title-row{align-items:flex-start;flex-direction:column;gap:6px}
+ .about-panel{padding:22px 20px}
  .signup .mailicon{display:none}
  .signup-form{flex-direction:column;gap:8px}
  .signup-form input,.signup-form button{border-radius:8px;padding:12px}
@@ -290,7 +305,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
   <div class="container hero-shell">
     <div class="hero-copy">
       <h1 id="heroTitle">Love in <em>action.</em><br>Hope that <em>travels.</em></h1>
-      <p id="heroText">Providing food, clean water, medical support, and sharing the Gospel—bringing hope and transformation to communities around the world.</p>
+      <p id="heroText">Your gift puts love into action—providing food, clean water, medical support, and Gospel-centered outreach to communities in need.</p>
       <div class="actions">
         <a class="btn btn-green" href="#give"><span class="icon-dot">♡</span> Donate</a>
         <a class="btn btn-light" href="#trips"><span class="icon-dot">↗</span> Explore Mission Trips</a>
@@ -303,7 +318,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
       <aside class="count-card">
         <div class="kicker">Next Mission Trip In</div>
         <h3>Good Hope, Jamaica</h3>
-        <div class="date">June 21 – June 28, 2027</div>
+        <div class="date">July 6 – July 20, 2027</div>
         <div class="clock">
           <div class="tick"><strong id="days">--</strong><span>DAYS</span></div>
           <div class="tick"><strong id="hours">--</strong><span>HRS</span></div>
@@ -337,7 +352,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
           <img class="card-img" src="assets/local-outreach-clean.jpg" alt="Local outreach">
           <div class="card-body">
             <h3>Local Outreach</h3>
-            <p>We serve our local community through food distribution, mentorship, and the love of Christ.</p>
+            <p>Your donation helps provide food, essentials, mentorship, and Christ-centered support to families in our local community.</p>
             <a class="learn" href="#contact">Learn More &nbsp;→</a>
           </div>
         </article>
@@ -345,7 +360,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
           <img class="card-img" src="assets/global-missions-clean.jpg" alt="Global missions">
           <div class="card-body">
             <h3>Global Missions</h3>
-            <p>Taking the Gospel across borders and bringing hope to communities through partnership and service.</p>
+            <p>Your gift helps take the Gospel across borders and equips trusted partners to serve communities with compassion.</p>
             <a class="learn" href="#trips">Learn More &nbsp;→</a>
           </div>
         </article>
@@ -353,7 +368,7 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
           <img class="card-img" src="assets/health-water-clean.jpg" alt="Health and water">
           <div class="card-body">
             <h3>Health & Water</h3>
-            <p>Providing clean water, medical support, and health-focused resources that meet practical needs.</p>
+            <p>Give to help provide clean water, medical support, and health-focused resources that meet urgent practical needs.</p>
             <a class="learn" href="#give">Learn More &nbsp;→</a>
           </div>
         </article>
@@ -374,18 +389,18 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
           <div class="flag">🇯🇲</div>
           <div class="card-body">
             <h3>Good Hope, Jamaica</h3>
-            <div class="date-sm">June 21 – June 28, 2027</div>
-            <p>Partner with local leaders to serve through outreach, supply distribution, ministry, and community care.</p>
+            <div class="date-sm">July 6 – July 20, 2027</div>
+            <p>Help fund outreach, supply distribution, ministry, and community care alongside trusted local leaders.</p>
             <a class="learn" href="#contact">Learn More &nbsp;→</a>
           </div>
         </article>
         <article class="card">
-          <img class="card-img" src="assets/kenya-clean.jpg" alt="Nakuru, Kenya">
+          <img class="card-img" src="assets/kenya-clean.jpg" alt="Kenya mission trip">
           <div class="flag">🇰🇪</div>
           <div class="card-body">
-            <h3>Nakuru, Kenya</h3>
-            <div class="date-sm">August 9 – August 17, 2027</div>
-            <p>Support clean-water work, medical supplies, practical service, and Gospel-centered community outreach.</p>
+            <h3>Kenya</h3>
+            <div class="date-sm">August 10 – August 23, 2027</div>
+            <p>Your support helps provide clean-water work, medical supplies, practical service, and Gospel-centered community outreach.</p>
             <a class="learn" href="#contact">Learn More &nbsp;→</a>
           </div>
         </article>
@@ -394,12 +409,22 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
   </div>
 </section>
 
+<section class="about-band" id="about">
+  <div class="container">
+    <div class="about-panel">
+      <div class="eyebrow">Who We Are</div>
+      <h2>Rooted On Christ International</h2>
+      <p>Rooted On Christ International is a 501(c)(3) faith-based nonprofit dedicated to strengthening communities globally through ministry, youth and family outreach, and assistance for those in need of life essentials. Your tax-deductible gift helps turn compassion into practical support, lasting empowerment, and Gospel-centered hope. <a href="#give">Give to the mission today&nbsp;→</a></p>
+    </div>
+  </div>
+</section>
+
 <section style="background:#fffaf3">
   <div class="container bottom-wrap">
     <section class="impact" id="impact">
       <div class="impact-title">
         <div class="eyebrow">Our Impact</div>
-        <h2>Lives Changed Through<br>Faith in Action</h2>
+        <h2>Your Giving Changes Lives<br>Through Faith in Action</h2>
       </div>
       <div class="metric">
         <div class="mi">♧</div>
@@ -428,12 +453,18 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
       <h2>Be Part of the Mission</h2>
       <p>Sign up for mission updates, outreach dates, and stories from the field.</p>
       <div class="mailicon">✉</div>
+      <div class="contact-list" aria-label="ROC International contact information">
+        <div class="contact-item"><span class="contact-icon" aria-hidden="true">☎</span><a href="tel:+13134860366">(313) 486-0366</a></div>
+        <div class="contact-item"><span class="contact-icon" aria-hidden="true">@</span><a href="mailto:therocint@gmail.com">therocint@gmail.com</a></div>
+        <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><a href="https://www.bing.com/maps/default.aspx?v=2&amp;pc=FACEBK&amp;mid=8100&amp;where1=42.27959%2C%20-83.43586&amp;FORM=FBKPL1&amp;name=40315%20Michigan%20Ave%20%23520%2C%20Canton%2C%20MI%2C%20United%20States%2C%2048188&amp;mkt=en-US&amp;fbclid=IwZXh0bgNhZW0CMTAAcGRvZgVicmlkETF2UEVXZFd3UE9seXZ5RlJBc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqmtdxhVXYsaXlJ-aKx_DOZaz3lX8h6xTZbq1X4XJaLOdhbKrn2y8grqOOWx_aem_M31f06lpCkPG9wI32KXyAA" target="_blank" rel="noopener noreferrer">40315 Michigan Ave #520<br>Canton, MI 48188</a></div>
+      </div>
       <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thank You!';">
         <input type="email" required placeholder="Enter your email" aria-label="Email address">
         <button type="submit">Sign Me Up &nbsp;→</button>
       </form>
       <div class="social">
-        <span>f</span><span>◎</span><span>▶</span><span>✉</span>
+        <a class="social-chip" href="https://www.facebook.com/profile.php?id=61580417261753" target="_blank" rel="noopener noreferrer" aria-label="Follow ROC International on Facebook"><b>f</b> Facebook</a>
+        <a class="social-chip" href="https://www.instagram.com/therocintl" target="_blank" rel="noopener noreferrer" aria-label="Follow ROC International on Instagram"><b>◎</b> Instagram</a>
       </div>
     </section>
   </div>
@@ -444,8 +475,8 @@ footer{background:#102f27;color:#dfe7e2;padding:35px 0}
     <div class="give-panel">
       <div class="give-heading">
         <div class="eyebrow">Ways to Donate</div>
-        <h2>Support Rooted On Christ International</h2>
-        <p>Your generosity helps ROC serve communities through outreach, missions, clean water, medical support, and the Gospel.</p>
+        <h2>Give Hope. Change Lives.</h2>
+        <p>Your gift to Rooted On Christ International directly supports community outreach, global missions, clean water, medical assistance, youth and family ministry, and the sharing of the Gospel. Choose a giving method below and make an impact today.</p>
       </div>
       <div class="giving-grid">
         <article class="giving-card">
@@ -507,8 +538,8 @@ async function copyGiveValue(button,value){
   setTimeout(()=>button.textContent=original,1800);
 }
 
-// Countdown: next trip, June 21, 2027 at 9:00 AM Central / Jamaica time (UTC-05:00)
-const target = new Date("2027-06-21T09:00:00-05:00");
+// Countdown: next trip, July 6, 2027 at 9:00 AM Jamaica time (UTC-05:00)
+const target = new Date("2027-07-06T09:00:00-05:00");
 function renderCountdown(){
   const diff = Math.max(0,target - new Date());
   const days = Math.floor(diff/86400000);
@@ -524,10 +555,10 @@ renderCountdown(); setInterval(renderCountdown,1000);
 
 // Functional hero slider while preserving the same visual treatment
 const slides=[
-  {title:'Love in <em>action.</em><br>Hope that <em>travels.</em>',text:'Providing food, clean water, medical support, and sharing the Gospel—bringing hope and transformation to communities around the world.'},
-  {title:'Faith that <em>serves.</em><br>Compassion that <em>moves.</em>',text:'We partner with communities to meet practical needs with dignity, consistency, prayer, and Christ-centered care.'},
-  {title:'Clean water.<br><em>Living hope.</em>',text:'From water initiatives to health support, ROC International helps strengthen vulnerable communities through practical service.'},
-  {title:'Go. Serve.<br><em>Share the Gospel.</em>',text:'Join mission teams serving in Jamaica and Kenya through outreach, supplies, community projects, ministry, and relationship-building.'}
+  {title:'Love in <em>action.</em><br>Hope that <em>travels.</em>',text:'Your gift puts love into action—providing food, clean water, medical support, and Gospel-centered outreach to communities in need.'},
+  {title:'Faith that <em>serves.</em><br>Compassion that <em>moves.</em>',text:'Your support equips trusted partners to meet practical needs with dignity, consistency, prayer, and Christ-centered care.'},
+  {title:'Clean water.<br><em>Living hope.</em>',text:'A gift to ROC helps fund clean-water initiatives, health support, and life-changing resources for vulnerable communities.'},
+  {title:'Go. Serve.<br><em>Share the Gospel.</em>',text:'Help send mission teams to Jamaica and Kenya with supplies, ministry resources, and practical support for the communities they serve.'}
 ];
 let current=0;
 const dots=[...document.querySelectorAll(".slider-dots button")];
